@@ -14,6 +14,9 @@
 		171680871FCBC6B60075CD77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171680851FCBC6B60075CD77 /* Main.storyboard */; };
 		171680891FCBC6B60075CD77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 171680881FCBC6B60075CD77 /* Assets.xcassets */; };
 		1716808C1FCBC6B60075CD77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1716808A1FCBC6B60075CD77 /* LaunchScreen.storyboard */; };
+		17C7E11D1FDCCC6E00DBBA17 /* GoogleVisionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E11C1FDCCC6E00DBBA17 /* GoogleVisionResult.swift */; };
+		17C7E11F1FDCCC9200DBBA17 /* GoogleStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E11E1FDCCC9200DBBA17 /* GoogleStructs.swift */; };
+		17C7E1221FDCCCC600DBBA17 /* GoogleVisionApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E1211FDCCCC600DBBA17 /* GoogleVisionApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		171680881FCBC6B60075CD77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1716808B1FCBC6B60075CD77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1716808D1FCBC6B60075CD77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17C7E11C1FDCCC6E00DBBA17 /* GoogleVisionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionResult.swift; sourceTree = "<group>"; };
+		17C7E11E1FDCCC9200DBBA17 /* GoogleStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleStructs.swift; sourceTree = "<group>"; };
+		17C7E1211FDCCCC600DBBA17 /* GoogleVisionApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,8 @@
 		171680801FCBC6B60075CD77 /* Whatsthat */ = {
 			isa = PBXGroup;
 			children = (
+				17C7E1201FDCCCA100DBBA17 /* utils */,
+				17C7E11A1FDCCC1C00DBBA17 /* models */,
 				17016E7A1FCBCD78008A8ADA /* view controllers */,
 				171680811FCBC6B60075CD77 /* AppDelegate.swift */,
 				171680851FCBC6B60075CD77 /* Main.storyboard */,
@@ -76,6 +84,31 @@
 				1716808D1FCBC6B60075CD77 /* Info.plist */,
 			);
 			path = Whatsthat;
+			sourceTree = "<group>";
+		};
+		17C7E11A1FDCCC1C00DBBA17 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				17C7E11B1FDCCC2C00DBBA17 /* codable */,
+				17C7E11C1FDCCC6E00DBBA17 /* GoogleVisionResult.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		17C7E11B1FDCCC2C00DBBA17 /* codable */ = {
+			isa = PBXGroup;
+			children = (
+				17C7E11E1FDCCC9200DBBA17 /* GoogleStructs.swift */,
+			);
+			path = codable;
+			sourceTree = "<group>";
+		};
+		17C7E1201FDCCCA100DBBA17 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				17C7E1211FDCCCC600DBBA17 /* GoogleVisionApiManager.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +184,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				171680841FCBC6B60075CD77 /* MenuViewController.swift in Sources */,
+				17C7E1221FDCCCC600DBBA17 /* GoogleVisionApiManager.swift in Sources */,
 				17016E7C1FCBCE97008A8ADA /* PhotoIdentificationViewController.swift in Sources */,
+				17C7E11D1FDCCC6E00DBBA17 /* GoogleVisionResult.swift in Sources */,
+				17C7E11F1FDCCC9200DBBA17 /* GoogleStructs.swift in Sources */,
 				17016E7E1FCBD123008A8ADA /* FavoritePhotosTableViewController.swift in Sources */,
 				171680821FCBC6B60075CD77 /* AppDelegate.swift in Sources */,
 			);
