@@ -12,6 +12,7 @@ class PhotoIdentificationViewController: UIViewController, UITableViewDataSource
     
     @IBOutlet weak var imageView: UIImageView!
     var catchImage : UIImage?
+    var selectedRow = Int()
     
     @IBOutlet weak var resultTableView: UITableView!
     var googleResults = [GoogleVisionResult]()
@@ -34,6 +35,11 @@ class PhotoIdentificationViewController: UIViewController, UITableViewDataSource
         let googleIndexPath = indexPath.row
         cell.textLabel?.text = googleResults[googleIndexPath].description
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedRow = indexPath.row
+        performSegue(withIdentifier: "WikipediaSegue", sender: self)
     }
     
     override func viewDidLoad() {
@@ -79,6 +85,15 @@ extension PhotoIdentificationViewController : ImageResultDelegate {
             }
             
             self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "WikipediaSegue" {
+            if let photoDetailsViewController = segue.destination as? PhotoDetailsViewController {
+                photoDetailsViewController.titleFromTableView = googleResults[self.selectedRow].description
+                print (googleResults[self.selectedRow].description)
+            }
         }
     }
 }

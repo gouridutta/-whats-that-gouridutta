@@ -34,6 +34,7 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate, UIIm
             imagePickerController.sourceType = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
         }))
+        
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
@@ -42,7 +43,7 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate, UIIm
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageToSegue = image
-            performSegue(withIdentifier: "photoIdentificationSegue", sender: self)
+            performSegue(withIdentifier: "PhotoIdentificationSegue", sender: self)
         }
         else {
             
@@ -53,7 +54,7 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "photoIdentificationSegue" {
+        if segue.identifier == "PhotoIdentificationSegue" {
             if let photoIdentificationViewController = segue.destination as? PhotoIdentificationViewController {
                 photoIdentificationViewController.catchImage = imageToSegue
             }
@@ -70,4 +71,5 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate, UIIm
     }
     
 }
+
 

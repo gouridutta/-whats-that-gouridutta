@@ -17,6 +17,9 @@
 		17C7E11D1FDCCC6E00DBBA17 /* GoogleVisionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E11C1FDCCC6E00DBBA17 /* GoogleVisionResult.swift */; };
 		17C7E11F1FDCCC9200DBBA17 /* GoogleStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E11E1FDCCC9200DBBA17 /* GoogleStructs.swift */; };
 		17C7E1221FDCCCC600DBBA17 /* GoogleVisionApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E1211FDCCCC600DBBA17 /* GoogleVisionApiManager.swift */; };
+		17C7E1241FDDBC0000DBBA17 /* WikipediaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E1231FDDBC0000DBBA17 /* WikipediaResult.swift */; };
+		17C7E1261FDDBCB800DBBA17 /* WikipediaAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E1251FDDBCB800DBBA17 /* WikipediaAPIManager.swift */; };
+		17C7E1281FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E1271FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		17C7E11C1FDCCC6E00DBBA17 /* GoogleVisionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionResult.swift; sourceTree = "<group>"; };
 		17C7E11E1FDCCC9200DBBA17 /* GoogleStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleStructs.swift; sourceTree = "<group>"; };
 		17C7E1211FDCCCC600DBBA17 /* GoogleVisionApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionApiManager.swift; sourceTree = "<group>"; };
+		17C7E1231FDDBC0000DBBA17 /* WikipediaResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaResult.swift; sourceTree = "<group>"; };
+		17C7E1251FDDBCB800DBBA17 /* WikipediaAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaAPIManager.swift; sourceTree = "<group>"; };
+		17C7E1271FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 				171680831FCBC6B60075CD77 /* MenuViewController.swift */,
 				17016E7B1FCBCE97008A8ADA /* PhotoIdentificationViewController.swift */,
 				17016E7D1FCBD123008A8ADA /* FavoritePhotosTableViewController.swift */,
+				17C7E1271FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -74,8 +81,8 @@
 		171680801FCBC6B60075CD77 /* Whatsthat */ = {
 			isa = PBXGroup;
 			children = (
-				17C7E1201FDCCCA100DBBA17 /* utils */,
 				17C7E11A1FDCCC1C00DBBA17 /* models */,
+				17C7E1201FDCCCA100DBBA17 /* utils */,
 				17016E7A1FCBCD78008A8ADA /* view controllers */,
 				171680811FCBC6B60075CD77 /* AppDelegate.swift */,
 				171680851FCBC6B60075CD77 /* Main.storyboard */,
@@ -91,6 +98,7 @@
 			children = (
 				17C7E11B1FDCCC2C00DBBA17 /* codable */,
 				17C7E11C1FDCCC6E00DBBA17 /* GoogleVisionResult.swift */,
+				17C7E1231FDDBC0000DBBA17 /* WikipediaResult.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -107,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				17C7E1211FDCCCC600DBBA17 /* GoogleVisionApiManager.swift */,
+				17C7E1251FDDBCB800DBBA17 /* WikipediaAPIManager.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -188,7 +197,10 @@
 				17016E7C1FCBCE97008A8ADA /* PhotoIdentificationViewController.swift in Sources */,
 				17C7E11D1FDCCC6E00DBBA17 /* GoogleVisionResult.swift in Sources */,
 				17C7E11F1FDCCC9200DBBA17 /* GoogleStructs.swift in Sources */,
+				17C7E1261FDDBCB800DBBA17 /* WikipediaAPIManager.swift in Sources */,
+				17C7E1281FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift in Sources */,
 				17016E7E1FCBD123008A8ADA /* FavoritePhotosTableViewController.swift in Sources */,
+				17C7E1241FDDBC0000DBBA17 /* WikipediaResult.swift in Sources */,
 				171680821FCBC6B60075CD77 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
