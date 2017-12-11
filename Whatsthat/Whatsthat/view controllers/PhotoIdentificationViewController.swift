@@ -92,7 +92,7 @@ extension PhotoIdentificationViewController : ImageResultDelegate {
         if segue.identifier == "WikipediaSegue" {
             if let photoDetailsViewController = segue.destination as? PhotoDetailsViewController {
                 photoDetailsViewController.titleFromTableView = googleResults[self.selectedRow].description
-                print (googleResults[self.selectedRow].description)
+                photoDetailsViewController.image = self.catchImage
             }
         }
     }

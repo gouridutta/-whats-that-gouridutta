@@ -12,17 +12,18 @@ import SafariServices
 class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelegate {
     
     var titleFromTableView = String()
-    var pageId = Int64()
+    var image : UIImage?
+    var url = URL(string : "https://en.wikipedia.org/")!
     let wikipediaAPiManager =  WikipediaAPIManager()
     
     @IBOutlet weak var webView: UIWebView!
     @IBAction func onSharePressed(_ sender: Any) {
-        let activityController = UIActivityViewController(activityItems: [textField.text!], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [self.url], applicationActivities: nil)
         present(activityController, animated: true, completion: nil)
     }
     
     @IBAction func openContentInSafari(_ sender: Any) {
-        let safariVC = SFSafariViewController(url: URL(string: "https://en.wikipedia.org/?curid=\(self.pageId)")!)
+        let safariVC = SFSafariViewController(url: self.url)
         safariVC.delegate = self
         self.present(safariVC, animated: true, completion: nil)
     }
@@ -32,15 +33,28 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let rightButton = UIBarButtonItem(title: "Right Button", style: UIBarButtonItemStyle.plain, target: self, action: #selector(PhotoDetailsViewController.clickButton))
+        navigationItem.rightBarButtonItem = rightButton
         wikipediaAPiManager.delegate = self
         getWikipediaResult(title: self.titleFromTableView)
+    }
+    
+    @objc func clickButton(sender: UIBarButtonItem){
+        if let imagedata = self.image {
+            let path = "\(self.titleFromTableView)\(Date()).jpg"
+            
+            if PersistanceManager.sharedInstance.saveImageInDocumentDirectory(fileName: path, image: imagedata) {
+                let favorite = Favorite(title: self.titleFromTableView, pathToImage: path)
+                PersistanceManager.sharedInstance.saveToFavorites(favorite: favorite)
+            }
+        }
     }
     
 }
 
 extension PhotoDetailsViewController : WikipediaResultDelegate {
     func wikipediaResultFound(wikipediaResult: WikipediaResult) {
-        self.pageId = wikipediaResult.pageid
+        self.url = URL(string : "https://en.wikipedia.org/?curid=\(wikipediaResult.pageid)")!
         DispatchQueue.main.async {
             self.webView.loadHTMLString(wikipediaResult.extract, baseURL: nil)
         }
@@ -72,4 +86,3 @@ extension PhotoDetailsViewController : WikipediaResultDelegate {
         }
     }
 }
-

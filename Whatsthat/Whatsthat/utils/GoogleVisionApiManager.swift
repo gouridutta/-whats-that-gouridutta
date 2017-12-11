@@ -109,3 +109,5 @@ class GoogleVisionAPIManager {
         return resizedImage!
     }
 }
+
+
