@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MenuViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -38,6 +39,7 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate, UIIm
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(actionSheet, animated: true, completion: nil)
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -71,5 +73,4 @@ class MenuViewController: UIViewController, UINavigationControllerDelegate, UIIm
     }
     
 }
-
 

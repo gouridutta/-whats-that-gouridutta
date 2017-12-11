@@ -20,6 +20,8 @@
 		17C7E1241FDDBC0000DBBA17 /* WikipediaResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E1231FDDBC0000DBBA17 /* WikipediaResult.swift */; };
 		17C7E1261FDDBCB800DBBA17 /* WikipediaAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E1251FDDBCB800DBBA17 /* WikipediaAPIManager.swift */; };
 		17C7E1281FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E1271FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift */; };
+		17D0865F1FDE582E0057CB41 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0865E1FDE582E0057CB41 /* Favorite.swift */; };
+		17D086611FDE58750057CB41 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D086601FDE58750057CB41 /* PersistanceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		17C7E1231FDDBC0000DBBA17 /* WikipediaResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaResult.swift; sourceTree = "<group>"; };
 		17C7E1251FDDBCB800DBBA17 /* WikipediaAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaAPIManager.swift; sourceTree = "<group>"; };
 		17C7E1271FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
+		17D0865E1FDE582E0057CB41 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		17D086601FDE58750057CB41 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 				17C7E11B1FDCCC2C00DBBA17 /* codable */,
 				17C7E11C1FDCCC6E00DBBA17 /* GoogleVisionResult.swift */,
 				17C7E1231FDDBC0000DBBA17 /* WikipediaResult.swift */,
+				17D0865E1FDE582E0057CB41 /* Favorite.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			children = (
 				17C7E1211FDCCCC600DBBA17 /* GoogleVisionApiManager.swift */,
 				17C7E1251FDDBCB800DBBA17 /* WikipediaAPIManager.swift */,
+				17D086601FDE58750057CB41 /* PersistanceManager.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -195,9 +201,11 @@
 				171680841FCBC6B60075CD77 /* MenuViewController.swift in Sources */,
 				17C7E1221FDCCCC600DBBA17 /* GoogleVisionApiManager.swift in Sources */,
 				17016E7C1FCBCE97008A8ADA /* PhotoIdentificationViewController.swift in Sources */,
+				17D086611FDE58750057CB41 /* PersistanceManager.swift in Sources */,
 				17C7E11D1FDCCC6E00DBBA17 /* GoogleVisionResult.swift in Sources */,
 				17C7E11F1FDCCC9200DBBA17 /* GoogleStructs.swift in Sources */,
 				17C7E1261FDDBCB800DBBA17 /* WikipediaAPIManager.swift in Sources */,
+				17D0865F1FDE582E0057CB41 /* Favorite.swift in Sources */,
 				17C7E1281FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift in Sources */,
 				17016E7E1FCBD123008A8ADA /* FavoritePhotosTableViewController.swift in Sources */,
 				17C7E1241FDDBC0000DBBA17 /* WikipediaResult.swift in Sources */,
