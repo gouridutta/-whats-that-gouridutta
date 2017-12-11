@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KDo-9q-1yQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KDo-9q-1yQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,7 +42,7 @@
                                         <state key="normal" title="Camera"/>
                                         <connections>
                                             <action selector="cameraButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Jy-QV-XrF"/>
-                                            <segue destination="I6Y-Bk-jxu" kind="show" identifier="photoIdentificationSegue" id="M94-Hm-IQe"/>
+                                            <segue destination="I6Y-Bk-jxu" kind="show" identifier="PhotoIdentificationSegue" id="M94-Hm-IQe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trC-1z-XrN">
@@ -142,11 +142,101 @@
                     <connections>
                         <outlet property="imageView" destination="59a-oP-XjQ" id="T0f-xh-5Ws"/>
                         <outlet property="resultTableView" destination="3ab-zx-8FF" id="g2O-3m-gQo"/>
+                        <segue destination="eZK-RT-Oa6" kind="show" identifier="WikipediaSegue" id="b5X-6p-dKF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pR-IE-vGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1696.8" y="-594.15292353823088"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="7c5-1H-Fkg">
+            <objects>
+                <viewController id="eZK-RT-Oa6" customClass="PhotoDetailsViewController" customModule="Whatsthat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="owT-Gn-s2T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Sq-qC-79y">
+                                <rect key="frame" x="16" y="595" width="108" height="38"/>
+                                <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Wikipedia">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="22"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="openContentInSafari:" destination="eZK-RT-Oa6" eventType="touchUpInside" id="h97-lM-e1J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fv9-oJ-Gvp">
+                                <rect key="frame" x="132" y="595" width="108" height="38"/>
+                                <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Tweets">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="22"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIH-Rd-2cg">
+                                <rect key="frame" x="248" y="595" width="108" height="38"/>
+                                <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Share">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="22"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="onSharePressed:" destination="eZK-RT-Oa6" eventType="touchUpInside" id="oLn-15-dbP"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EjW-WE-dZD">
+                                <rect key="frame" x="16" y="79" width="340" height="478"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fv9-oJ-Gvp" firstAttribute="bottom" secondItem="6Sq-qC-79y" secondAttribute="bottom" id="2jr-AC-Jce"/>
+                            <constraint firstItem="fv9-oJ-Gvp" firstAttribute="width" secondItem="6Sq-qC-79y" secondAttribute="width" id="6ge-Vr-Eud"/>
+                            <constraint firstItem="fv9-oJ-Gvp" firstAttribute="top" secondItem="EjW-WE-dZD" secondAttribute="bottom" constant="38" id="B1A-5M-dd2"/>
+                            <constraint firstItem="mFS-iR-2Kl" firstAttribute="trailing" secondItem="EjW-WE-dZD" secondAttribute="trailing" constant="19" id="Fec-mk-XQe"/>
+                            <constraint firstItem="eIH-Rd-2cg" firstAttribute="bottom" secondItem="fv9-oJ-Gvp" secondAttribute="bottom" id="ILe-t4-bRv"/>
+                            <constraint firstItem="eIH-Rd-2cg" firstAttribute="leading" secondItem="fv9-oJ-Gvp" secondAttribute="trailing" constant="8" id="J11-4Z-5NX"/>
+                            <constraint firstItem="mFS-iR-2Kl" firstAttribute="trailing" secondItem="eIH-Rd-2cg" secondAttribute="trailing" constant="19" id="Kb9-Tx-b7v"/>
+                            <constraint firstItem="EjW-WE-dZD" firstAttribute="leading" secondItem="mFS-iR-2Kl" secondAttribute="leading" constant="16" id="T90-k6-KHB"/>
+                            <constraint firstItem="6Sq-qC-79y" firstAttribute="leading" secondItem="mFS-iR-2Kl" secondAttribute="leading" constant="16" id="VDS-KI-BTM"/>
+                            <constraint firstItem="eIH-Rd-2cg" firstAttribute="top" secondItem="EjW-WE-dZD" secondAttribute="bottom" constant="38" id="WJ3-R5-CAx"/>
+                            <constraint firstItem="eIH-Rd-2cg" firstAttribute="width" secondItem="fv9-oJ-Gvp" secondAttribute="width" id="Xqk-fT-xhS"/>
+                            <constraint firstItem="6Sq-qC-79y" firstAttribute="top" secondItem="EjW-WE-dZD" secondAttribute="bottom" constant="38" id="XzJ-yH-0In"/>
+                            <constraint firstItem="EjW-WE-dZD" firstAttribute="top" secondItem="mFS-iR-2Kl" secondAttribute="top" constant="15" id="l8F-2d-gOu"/>
+                            <constraint firstItem="mFS-iR-2Kl" firstAttribute="bottom" secondItem="6Sq-qC-79y" secondAttribute="bottom" constant="34" id="rHn-BD-mJe"/>
+                            <constraint firstItem="fv9-oJ-Gvp" firstAttribute="leading" secondItem="6Sq-qC-79y" secondAttribute="trailing" constant="8" id="tHH-NY-wz9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mFS-iR-2Kl"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="EjW-WE-dZD" id="oFk-7I-2nY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hV4-t0-PZk" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2837.5999999999999" y="-594.15292353823088"/>
         </scene>
     </scenes>
 </document>

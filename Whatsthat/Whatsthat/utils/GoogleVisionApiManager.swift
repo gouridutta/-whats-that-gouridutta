@@ -12,7 +12,6 @@ import UIKit
 protocol ImageResultDelegate {
     func imageDataFound(googleVisionResults: [GoogleVisionResult])
     func imageDataNotFound(reason: GoogleVisionAPIManager.FailureReason)
-    
 }
 
 class GoogleVisionAPIManager {
@@ -110,5 +109,3 @@ class GoogleVisionAPIManager {
         return resizedImage!
     }
 }
-
-
