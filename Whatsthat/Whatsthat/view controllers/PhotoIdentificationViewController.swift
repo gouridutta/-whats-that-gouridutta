@@ -34,6 +34,8 @@ class PhotoIdentificationViewController: UIViewController, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "GoogleResult", for: indexPath)
         let googleIndexPath = indexPath.row
         cell.textLabel?.text = googleResults[googleIndexPath].description
+        let score = Double(round(googleResults[googleIndexPath].score * 10000)/100)
+        cell.detailTextLabel?.text = "Score: \(score.description) %"
         return cell
     }
     
