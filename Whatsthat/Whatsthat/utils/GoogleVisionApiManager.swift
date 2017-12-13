@@ -78,7 +78,6 @@ class GoogleVisionAPIManager {
                 for labelAnnotation in labelAnnotations {
                     let googleVisionResult = GoogleVisionResult(mid: labelAnnotation.mid ,description: labelAnnotation.description, score: labelAnnotation.score)
                     googleVisionResults.append(googleVisionResult)
-                    print(googleVisionResult)
                 }
             }
             self.delegate?.imageDataFound(googleVisionResults: googleVisionResults)

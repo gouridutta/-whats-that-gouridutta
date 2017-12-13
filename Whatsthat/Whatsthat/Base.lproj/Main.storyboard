@@ -79,13 +79,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Favorites" id="0Gc-zW-hg2">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Favorites" rowHeight="139" id="0Gc-zW-hg2" customClass="FavTableViewCell" customModule="Whatsthat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="139"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Gc-zW-hg2" id="1mj-Ud-KNd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="138.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7xW-Qe-p8N">
+                                            <rect key="frame" x="5" y="5" width="365" height="128.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VcO-V1-fRQ">
+                                                    <rect key="frame" x="0.0" y="3.5" width="166" height="121.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="121.5" id="0JA-5T-g1m"/>
+                                                        <constraint firstAttribute="width" constant="166" id="dFD-2Z-uDM"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIz-sz-WRi">
+                                                    <rect key="frame" x="181" y="54" width="184" height="20.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7xW-Qe-p8N" firstAttribute="leading" secondItem="1mj-Ud-KNd" secondAttribute="leading" constant="5" id="BqR-du-neO"/>
+                                        <constraint firstAttribute="trailing" secondItem="7xW-Qe-p8N" secondAttribute="trailing" constant="5" id="TO2-gb-l7g"/>
+                                        <constraint firstItem="7xW-Qe-p8N" firstAttribute="top" secondItem="1mj-Ud-KNd" secondAttribute="top" constant="5" id="YLr-Av-Tqb"/>
+                                        <constraint firstAttribute="bottom" secondItem="7xW-Qe-p8N" secondAttribute="bottom" constant="5" id="aWC-48-ELZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="favImageView" destination="VcO-V1-fRQ" id="NlN-xt-AhD"/>
+                                    <outlet property="favLabel" destination="bIz-sz-WRi" id="jHh-Lc-HaT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -93,13 +123,16 @@
                             <outlet property="delegate" destination="vMw-Jx-VWz" id="0dv-a0-QHT"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="BK5-ah-z6x">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
                         <segue destination="eZK-RT-Oa6" kind="show" identifier="FavoriteDetailSegue" id="dmE-Dj-MXn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xvs-2s-Z5o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881" y="555"/>
+            <point key="canvasLocation" x="880.79999999999995" y="554.57271364317842"/>
         </scene>
         <!--Photo Identification View Controller-->
         <scene sceneID="E9u-ET-GeT">
@@ -190,6 +223,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="onTweetsPressed:" destination="eZK-RT-Oa6" eventType="touchUpInside" id="l6w-x4-kF9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIH-Rd-2cg">
                                 <rect key="frame" x="248" y="595" width="108" height="38"/>
@@ -235,11 +271,40 @@
                     </view>
                     <connections>
                         <outlet property="webView" destination="EjW-WE-dZD" id="oFk-7I-2nY"/>
+                        <segue destination="1UJ-oz-VCj" kind="show" identifier="TwitterSegue" id="Qju-OV-h7h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hV4-t0-PZk" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2837.5999999999999" y="-594.15292353823088"/>
+        </scene>
+        <!--Search Timeline View Controller-->
+        <scene sceneID="jof-XT-yY7">
+            <objects>
+                <tableViewController id="1UJ-oz-VCj" customClass="SearchTimelineViewController" customModule="Whatsthat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BSc-JN-Dmj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="3QR-8W-QYQ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3QR-8W-QYQ" id="0wL-aH-9ht">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1UJ-oz-VCj" id="TGR-Bq-PwS"/>
+                            <outlet property="delegate" destination="1UJ-oz-VCj" id="RMN-5U-7OX"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLN-Sj-IpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3912" y="-625"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

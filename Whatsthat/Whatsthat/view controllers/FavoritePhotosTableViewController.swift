@@ -18,9 +18,12 @@ class FavoritePhotosTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Favorites", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Favorites", for: indexPath) as! FavTableViewCell
         let favoriteIndexPath = indexPath.row
-        cell.textLabel?.text = favorites[favoriteIndexPath].title
+        cell.favLabel.text = favorites[favoriteIndexPath].title
+        if let image = PersistanceManager.sharedInstance.getImageFromDocumentDirectory(fileName: favorites[favoriteIndexPath].pathToImage) {
+            cell.favImageView.image = image
+        }
         return cell
     }
     
@@ -38,7 +41,6 @@ class FavoritePhotosTableViewController: UITableViewController {
         if segue.identifier == "FavoriteDetailSegue" {
             if let photoDetailsViewController = segue.destination as? PhotoDetailsViewController {
                 photoDetailsViewController.titleFromTableView = favorites[self.selectedRow].title
-                //photoDetailsViewController.image = self.catchImage
             }
         }
     }
