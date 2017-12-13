@@ -14,6 +14,8 @@
 		171680871FCBC6B60075CD77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 171680851FCBC6B60075CD77 /* Main.storyboard */; };
 		171680891FCBC6B60075CD77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 171680881FCBC6B60075CD77 /* Assets.xcassets */; };
 		1716808C1FCBC6B60075CD77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1716808A1FCBC6B60075CD77 /* LaunchScreen.storyboard */; };
+		179BA92B1FE0674E0093FC5E /* FavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179BA92A1FE0674E0093FC5E /* FavTableViewCell.swift */; };
+		179BA92D1FE067770093FC5E /* SearchTimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179BA92C1FE067770093FC5E /* SearchTimeLineViewController.swift */; };
 		17C7E11D1FDCCC6E00DBBA17 /* GoogleVisionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E11C1FDCCC6E00DBBA17 /* GoogleVisionResult.swift */; };
 		17C7E11F1FDCCC9200DBBA17 /* GoogleStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E11E1FDCCC9200DBBA17 /* GoogleStructs.swift */; };
 		17C7E1221FDCCCC600DBBA17 /* GoogleVisionApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E1211FDCCCC600DBBA17 /* GoogleVisionApiManager.swift */; };
@@ -22,6 +24,7 @@
 		17C7E1281FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7E1271FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift */; };
 		17D0865F1FDE582E0057CB41 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D0865E1FDE582E0057CB41 /* Favorite.swift */; };
 		17D086611FDE58750057CB41 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D086601FDE58750057CB41 /* PersistanceManager.swift */; };
+		4EE827F3CBEF9091C1561426 /* Pods_Whatsthat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98481EA774621584FAE13BF /* Pods_Whatsthat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		171680881FCBC6B60075CD77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1716808B1FCBC6B60075CD77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1716808D1FCBC6B60075CD77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		179BA92A1FE0674E0093FC5E /* FavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
+		179BA92C1FE067770093FC5E /* SearchTimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTimeLineViewController.swift; sourceTree = "<group>"; };
+		179BA92E1FE067E90093FC5E /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		17C7E11C1FDCCC6E00DBBA17 /* GoogleVisionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionResult.swift; sourceTree = "<group>"; };
 		17C7E11E1FDCCC9200DBBA17 /* GoogleStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleStructs.swift; sourceTree = "<group>"; };
 		17C7E1211FDCCCC600DBBA17 /* GoogleVisionApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionApiManager.swift; sourceTree = "<group>"; };
@@ -42,6 +48,9 @@
 		17C7E1271FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		17D0865E1FDE582E0057CB41 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		17D086601FDE58750057CB41 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
+		20958BCE5CCA1AB9755660EB /* Pods-Whatsthat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatsthat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Whatsthat/Pods-Whatsthat.debug.xcconfig"; sourceTree = "<group>"; };
+		47FA932411170C72467B4448 /* Pods-Whatsthat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whatsthat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Whatsthat/Pods-Whatsthat.release.xcconfig"; sourceTree = "<group>"; };
+		C98481EA774621584FAE13BF /* Pods_Whatsthat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whatsthat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EE827F3CBEF9091C1561426 /* Pods_Whatsthat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +72,8 @@
 				17016E7B1FCBCE97008A8ADA /* PhotoIdentificationViewController.swift */,
 				17016E7D1FCBD123008A8ADA /* FavoritePhotosTableViewController.swift */,
 				17C7E1271FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift */,
+				179BA92A1FE0674E0093FC5E /* FavTableViewCell.swift */,
+				179BA92C1FE067770093FC5E /* SearchTimeLineViewController.swift */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -71,6 +83,8 @@
 			children = (
 				171680801FCBC6B60075CD77 /* Whatsthat */,
 				1716807F1FCBC6B60075CD77 /* Products */,
+				AF42785A3BA9BEBF94A81734 /* Pods */,
+				857DCDBDA0395EA8668E4340 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +99,7 @@
 		171680801FCBC6B60075CD77 /* Whatsthat */ = {
 			isa = PBXGroup;
 			children = (
+				179BA92E1FE067E90093FC5E /* Bridge.h */,
 				17C7E11A1FDCCC1C00DBBA17 /* models */,
 				17C7E1201FDCCCA100DBBA17 /* utils */,
 				17016E7A1FCBCD78008A8ADA /* view controllers */,
@@ -126,6 +141,23 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		857DCDBDA0395EA8668E4340 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C98481EA774621584FAE13BF /* Pods_Whatsthat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF42785A3BA9BEBF94A81734 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20958BCE5CCA1AB9755660EB /* Pods-Whatsthat.debug.xcconfig */,
+				47FA932411170C72467B4448 /* Pods-Whatsthat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 171680901FCBC6B60075CD77 /* Build configuration list for PBXNativeTarget "Whatsthat" */;
 			buildPhases = (
+				1C72D8889578AFC6CD96D237 /* [CP] Check Pods Manifest.lock */,
 				1716807A1FCBC6B60075CD77 /* Sources */,
 				1716807B1FCBC6B60075CD77 /* Frameworks */,
 				1716807C1FCBC6B60075CD77 /* Resources */,
+				E0352A757DC7BD6A6511B029 /* [CP] Embed Pods Frameworks */,
+				CFA7A86031AD1B8166C75A32 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +228,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C72D8889578AFC6CD96D237 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Whatsthat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFA7A86031AD1B8166C75A32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Whatsthat/Pods-Whatsthat-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Whatsthat/Pods-Whatsthat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0352A757DC7BD6A6511B029 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Whatsthat/Pods-Whatsthat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1716807A1FCBC6B60075CD77 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -205,9 +295,11 @@
 				17C7E11D1FDCCC6E00DBBA17 /* GoogleVisionResult.swift in Sources */,
 				17C7E11F1FDCCC9200DBBA17 /* GoogleStructs.swift in Sources */,
 				17C7E1261FDDBCB800DBBA17 /* WikipediaAPIManager.swift in Sources */,
+				179BA92B1FE0674E0093FC5E /* FavTableViewCell.swift in Sources */,
 				17D0865F1FDE582E0057CB41 /* Favorite.swift in Sources */,
 				17C7E1281FDDBD9E00DBBA17 /* PhotoDetailsViewController.swift in Sources */,
 				17016E7E1FCBD123008A8ADA /* FavoritePhotosTableViewController.swift in Sources */,
+				179BA92D1FE067770093FC5E /* SearchTimeLineViewController.swift in Sources */,
 				17C7E1241FDDBC0000DBBA17 /* WikipediaResult.swift in Sources */,
 				171680821FCBC6B60075CD77 /* AppDelegate.swift in Sources */,
 			);
@@ -344,6 +436,7 @@
 		};
 		171680911FCBC6B60075CD77 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20958BCE5CCA1AB9755660EB /* Pods-Whatsthat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -352,6 +445,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gwu.gouri.Whatsthat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = Whatsthat/Bridge.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -359,6 +453,7 @@
 		};
 		171680921FCBC6B60075CD77 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47FA932411170C72467B4448 /* Pods-Whatsthat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -367,6 +462,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gwu.gouri.Whatsthat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = Whatsthat/Bridge.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

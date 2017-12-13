@@ -22,6 +22,10 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
         present(activityController, animated: true, completion: nil)
     }
     
+    @IBAction func onTweetsPressed(_ sender: Any) {
+        performSegue(withIdentifier: "TwitterSegue", sender: self)
+    }
+    
     @IBAction func openContentInSafari(_ sender: Any) {
         let safariVC = SFSafariViewController(url: self.url)
         safariVC.delegate = self
@@ -33,23 +37,27 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let rightButton = UIBarButtonItem(title: "Right Button", style: UIBarButtonItemStyle.plain, target: self, action: #selector(PhotoDetailsViewController.clickButton))
-        navigationItem.rightBarButtonItem = rightButton
+        let favoriteButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(PhotoDetailsViewController.saveButton))
+        
+        let unFavoriteButton = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(PhotoDetailsViewController.deleteButton))
+        
+        navigationItem.rightBarButtonItems = [unFavoriteButton, favoriteButton]
         wikipediaAPiManager.delegate = self
         getWikipediaResult(title: self.titleFromTableView)
     }
-    
-    @objc func clickButton(sender: UIBarButtonItem){
+    @objc func saveButton(sender: UIBarButtonItem){
         if let imagedata = self.image {
             let path = "\(self.titleFromTableView)\(Date()).jpg"
-            
-            if PersistanceManager.sharedInstance.saveImageInDocumentDirectory(fileName: path, image: imagedata) {
-                let favorite = Favorite(title: self.titleFromTableView, pathToImage: path)
-                PersistanceManager.sharedInstance.saveToFavorites(favorite: favorite)
+            let favorite = Favorite(title: self.titleFromTableView, pathToImage: path)
+            if PersistanceManager.sharedInstance.saveToFavorites(favorite: favorite) {
+                PersistanceManager.sharedInstance.saveImageInDocumentDirectory(fileName: path, image: imagedata)
             }
         }
     }
     
+    @objc func deleteButton(sender: UIBarButtonItem){
+        PersistanceManager.sharedInstance.deleteFromFavorites(title: titleFromTableView)
+    }
 }
 
 extension PhotoDetailsViewController : WikipediaResultDelegate {
@@ -85,4 +93,13 @@ extension PhotoDetailsViewController : WikipediaResultDelegate {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TwitterSegue" {
+            if let searchTimelineViewController = segue.destination as? SearchTimelineViewController {
+                searchTimelineViewController.twiiterTitle = titleFromTableView
+            }
+        }
+    }
+    
 }
