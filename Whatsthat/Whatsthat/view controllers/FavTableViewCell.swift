@@ -13,6 +13,6 @@ class FavTableViewCell: UITableViewCell {
     @IBOutlet weak var favImageView: UIImageView!
     @IBOutlet weak var favLabel: UILabel!
     
-    
+
 }
 

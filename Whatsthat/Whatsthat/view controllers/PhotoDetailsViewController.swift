@@ -47,7 +47,7 @@ class PhotoDetailsViewController: UIViewController, SFSafariViewControllerDelega
     }
     @objc func saveButton(sender: UIBarButtonItem){
         if let imagedata = self.image {
-            let path = "\(self.titleFromTableView)\(Date()).jpg"
+            let path = "\(self.titleFromTableView)\(UUID().uuidString).jpg"
             let favorite = Favorite(title: self.titleFromTableView, pathToImage: path)
             if PersistanceManager.sharedInstance.saveToFavorites(favorite: favorite) {
                 PersistanceManager.sharedInstance.saveImageInDocumentDirectory(fileName: path, image: imagedata)
@@ -103,3 +103,4 @@ extension PhotoDetailsViewController : WikipediaResultDelegate {
     }
     
 }
+
