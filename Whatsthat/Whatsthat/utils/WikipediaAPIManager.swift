@@ -75,7 +75,5 @@ class WikipediaAPIManager {
         
         task.resume()
     }
-    
-    
 }
 
