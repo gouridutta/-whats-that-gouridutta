@@ -36,7 +36,6 @@ class PersistanceManager {
         let userDefaults = UserDefaults.standard
         var favorites = fetchFavorites()
         if (getIndexOfTitleInFavorites(title: favorite.title, favorites: favorites) >= 0) { return false }
-        print(index)
         favorites.append(favorite)
         let data = NSKeyedArchiver.archivedData(withRootObject: favorites)
         userDefaults.set(data, forKey: favoritesKey)
@@ -50,7 +49,7 @@ class PersistanceManager {
         if (index < 0) {
             return
         }
-        print(index)
+        deleteImageFromDocumentDirectory(fileName: favorites[index].pathToImage)
         favorites.remove(at: index)
         userDefaults.removeObject(forKey: favoritesKey)
         let data = NSKeyedArchiver.archivedData(withRootObject: favorites)
@@ -91,9 +90,20 @@ class PersistanceManager {
     
     func getImageFromDocumentDirectory(fileName: String) -> UIImage? {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
-        let getImagePath = paths.appendingPathComponent(fileName)
-        return UIImage(contentsOfFile: getImagePath)
+        let getImage = paths.appendingPathComponent(fileName)
+        return UIImage(contentsOfFile: getImage)
+    }
+    
+    func deleteImageFromDocumentDirectory(fileName: String) {
+        let fileManager = FileManager.default
+        do {
+            let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+            let fileURL = documentDirectory.appendingPathComponent(fileName)
+            try fileManager.removeItem(at: fileURL)
+            print(fileName)
+        } catch {
+            print(error)
+        }
     }
     
 }
-

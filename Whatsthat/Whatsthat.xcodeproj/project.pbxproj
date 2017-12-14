@@ -39,7 +39,6 @@
 		1716808D1FCBC6B60075CD77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		179BA92A1FE0674E0093FC5E /* FavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewCell.swift; sourceTree = "<group>"; };
 		179BA92C1FE067770093FC5E /* SearchTimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTimeLineViewController.swift; sourceTree = "<group>"; };
-		179BA92E1FE067E90093FC5E /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		17C7E11C1FDCCC6E00DBBA17 /* GoogleVisionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionResult.swift; sourceTree = "<group>"; };
 		17C7E11E1FDCCC9200DBBA17 /* GoogleStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleStructs.swift; sourceTree = "<group>"; };
 		17C7E1211FDCCCC600DBBA17 /* GoogleVisionApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleVisionApiManager.swift; sourceTree = "<group>"; };
@@ -99,7 +98,6 @@
 		171680801FCBC6B60075CD77 /* Whatsthat */ = {
 			isa = PBXGroup;
 			children = (
-				179BA92E1FE067E90093FC5E /* Bridge.h */,
 				17C7E11A1FDCCC1C00DBBA17 /* models */,
 				17C7E1201FDCCCA100DBBA17 /* utils */,
 				17016E7A1FCBCD78008A8ADA /* view controllers */,
@@ -445,7 +443,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gwu.gouri.Whatsthat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = Whatsthat/Bridge.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -462,7 +459,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gwu.gouri.Whatsthat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = Whatsthat/Bridge.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

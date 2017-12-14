@@ -14,6 +14,7 @@ class SearchTimelineViewController: TWTRTimelineViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Twitter.sharedInstance().start(withConsumerKey:"69C8fxBNnL5UnoKUiDyQVJMoU", consumerSecret:"3SfitHuHIOUxhb6afaD1Xp2keWglNGdVM3W7HSRWHhPBtg3fDe")
         let client = TWTRAPIClient()
         if let title = twiiterTitle {
             self.dataSource = TWTRSearchTimelineDataSource(searchQuery: "#\(title)", apiClient: client)

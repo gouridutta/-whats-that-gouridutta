@@ -24,8 +24,9 @@ class GoogleVisionAPIManager {
     var delegate:ImageResultDelegate?
     
     func fetchImageAnalysisDataFromGoogle(_ image: UIImage) {
+        let API_Key = "AIzaSyBoJFhK3JNFPGzeZmHZz3HZyh1P1HGZrG0"
         let imageBase64 = base64EncodeImage(image)
-        let url = URL(string: "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBoJFhK3JNFPGzeZmHZz3HZyh1P1HGZrG0")!
+        let url = URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(API_Key)")!
         let jsonRequest = [
             "requests": [
                 "image": [
@@ -108,5 +109,4 @@ class GoogleVisionAPIManager {
         return resizedImage!
     }
 }
-
 
